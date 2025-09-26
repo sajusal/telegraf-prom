@@ -1,1 +1,1 @@
-# telegraf-prom
+# SR Linux with Telegraf and Prometheus
