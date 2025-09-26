@@ -1,0 +1,231 @@
+{
+  "name": "telgraf-prom",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-dd048eb470dd",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": [],
+  "nodes": {
+    "leaf1": {
+      "index": "0",
+      "shortname": "leaf1",
+      "longname": "leaf1",
+      "fqdn": "leaf1.telgraf-prom.io",
+      "group": "",
+      "labdir": "/root/saju/telegraf-git/telegraf-prom/clab-telgraf-prom/leaf1",
+      "kind": "nokia_srlinux",
+      "image": "ghcr.io/nokia/srlinux:25.7.1",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "1a:48:00:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-dd048eb470dd",
+        "clab-node-group": "",
+        "clab-node-kind": "nokia_srlinux",
+        "clab-node-lab-dir": "/root/saju/telegraf-git/telegraf-prom/clab-telgraf-prom/leaf1",
+        "clab-node-longname": "leaf1",
+        "clab-node-name": "leaf1",
+        "clab-node-type": "ixr-d5",
+        "clab-owner": "root",
+        "clab-topo-file": "/root/saju/telegraf-git/telegraf-prom/telegraf-prom.clab.yml",
+        "containerlab": "telgraf-prom"
+      },
+      "port-bindings": [
+      ]
+    },
+    "leaf2": {
+      "index": "1",
+      "shortname": "leaf2",
+      "longname": "leaf2",
+      "fqdn": "leaf2.telgraf-prom.io",
+      "group": "",
+      "labdir": "/root/saju/telegraf-git/telegraf-prom/clab-telgraf-prom/leaf2",
+      "kind": "nokia_srlinux",
+      "image": "ghcr.io/nokia/srlinux:25.7.1",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "1a:04:01:00:00:00",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-dd048eb470dd",
+        "clab-node-group": "",
+        "clab-node-kind": "nokia_srlinux",
+        "clab-node-lab-dir": "/root/saju/telegraf-git/telegraf-prom/clab-telgraf-prom/leaf2",
+        "clab-node-longname": "leaf2",
+        "clab-node-name": "leaf2",
+        "clab-node-type": "ixr-d5",
+        "clab-owner": "root",
+        "clab-topo-file": "/root/saju/telegraf-git/telegraf-prom/telegraf-prom.clab.yml",
+        "containerlab": "telgraf-prom"
+      },
+      "port-bindings": [
+      ]
+    },
+    "prometheus": {
+      "index": "2",
+      "shortname": "prometheus",
+      "longname": "prometheus",
+      "fqdn": "prometheus.telgraf-prom.io",
+      "group": "",
+      "labdir": "/root/saju/telegraf-git/telegraf-prom/clab-telgraf-prom/prometheus",
+      "kind": "linux",
+      "image": "quay.io/prometheus/prometheus:v2.54.1",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-dd048eb470dd",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/root/saju/telegraf-git/telegraf-prom/clab-telgraf-prom/prometheus",
+        "clab-node-longname": "prometheus",
+        "clab-node-name": "prometheus",
+        "clab-node-type": "",
+        "clab-owner": "root",
+        "clab-topo-file": "/root/saju/telegraf-git/telegraf-prom/telegraf-prom.clab.yml",
+        "containerlab": "telgraf-prom"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "0.0.0.0",
+          "host-port": 9090,
+          "port": 9090,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "::",
+          "host-port": 9090,
+          "port": 9090,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "telegraf2": {
+      "index": "3",
+      "shortname": "telegraf2",
+      "longname": "telegraf2",
+      "fqdn": "telegraf2.telgraf-prom.io",
+      "group": "",
+      "labdir": "/root/saju/telegraf-git/telegraf-prom/clab-telgraf-prom/telegraf2",
+      "kind": "linux",
+      "image": "telegraf:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-dd048eb470dd",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/root/saju/telegraf-git/telegraf-prom/clab-telgraf-prom/telegraf2",
+        "clab-node-longname": "telegraf2",
+        "clab-node-name": "telegraf2",
+        "clab-node-type": "",
+        "clab-owner": "root",
+        "clab-topo-file": "/root/saju/telegraf-git/telegraf-prom/telegraf-prom.clab.yml",
+        "containerlab": "telgraf-prom"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 8125,
+          "protocol": "udp"
+        },
+        {
+          "host-ip": "0.0.0.0",
+          "host-port": 9273,
+          "port": 9273,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "::",
+          "host-port": 9273,
+          "port": 9273,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 8092,
+          "protocol": "udp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 8094,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  },
+  "links": [
+    {
+      "a": {
+        "node": "leaf1",
+        "interface": "e1-1",
+        "mac": "aa:c1:ab:80:23:25",
+        "peer": "z"
+      },
+      "z": {
+        "node": "leaf2",
+        "interface": "e1-1",
+        "mac": "aa:c1:ab:ea:e0:5a",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "leaf1",
+        "interface": "e1-2-2",
+        "mac": "aa:c1:ab:fb:23:ed",
+        "peer": "z"
+      },
+      "z": {
+        "node": "leaf2",
+        "interface": "e1-2-2",
+        "mac": "aa:c1:ab:8c:a4:b5",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "leaf1",
+        "interface": "e1-3-4",
+        "mac": "aa:c1:ab:c0:ab:34",
+        "peer": "z"
+      },
+      "z": {
+        "node": "leaf2",
+        "interface": "e1-3-4",
+        "mac": "aa:c1:ab:63:59:be",
+        "peer": "a"
+      }
+    }
+  ]
+}
